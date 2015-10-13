@@ -35,9 +35,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="441"/>
+            <point key="canvasLocation" x="1861" y="1104"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Todo List-->
         <scene sceneID="fkG-ks-gtL">
             <objects>
                 <tableViewController id="n19-Bs-bqY" sceneMemberID="viewController">
@@ -97,7 +97,13 @@
                             <outlet property="delegate" destination="n19-Bs-bqY" id="vea-q4-qtk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="atH-SR-FSH"/>
+                    <navigationItem key="navigationItem" title="Todo List" id="atH-SR-FSH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UHc-T3-7ce">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="showDetail" id="mKb-Y8-FVM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCQ-Gi-idH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
