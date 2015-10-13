@@ -12,10 +12,12 @@ class Task: NSObject {
     var name: NSString = ""
     var completed: Bool = false
     var creationDate: NSDate = NSDate()
+    var completeDate: NSDate?
     
     init(name: String){
         self.name = name
         self.completed = false
         self.creationDate = NSDate()
+
     }
 }

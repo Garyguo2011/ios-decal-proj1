@@ -54,6 +54,58 @@
             </objects>
             <point key="canvasLocation" x="2597" y="1104"/>
         </scene>
+        <!--Daily Stats-->
+        <scene sceneID="Q21-Rl-lYw">
+            <objects>
+                <viewController id="Jhm-r4-WDu" customClass="StatsViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v4W-9Q-2ak"/>
+                        <viewControllerLayoutGuide type="bottom" id="cl2-Ts-LC9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K4Z-DM-K27" userLabel="Stats">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Task Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-u3-gCr">
+                                <rect key="frame" x="96" y="170" width="409" height="36"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1Q-rQ-KC1">
+                                <rect key="frame" x="213" y="214" width="175" height="172"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="113"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jtv-u3-gCr" firstAttribute="centerX" secondItem="K4Z-DM-K27" secondAttribute="centerX" id="qrE-zn-mCY"/>
+                            <constraint firstItem="J1Q-rQ-KC1" firstAttribute="centerY" secondItem="K4Z-DM-K27" secondAttribute="centerY" id="sCY-HD-a1X"/>
+                            <constraint firstItem="J1Q-rQ-KC1" firstAttribute="centerX" secondItem="K4Z-DM-K27" secondAttribute="centerX" id="wZH-2X-3ec"/>
+                            <constraint firstItem="J1Q-rQ-KC1" firstAttribute="top" secondItem="jtv-u3-gCr" secondAttribute="bottom" constant="37" id="wjL-3l-fUD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Daily Stats" id="EBs-Xz-b4Y">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="oWN-zT-1WP">
+                            <connections>
+                                <segue destination="YAw-7L-r3R" kind="unwind" unwindAction="cancelAddNewTask:" id="LLT-JD-bb0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="numberOfCompleted" destination="J1Q-rQ-KC1" id="9Ly-wg-rCv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghs-qg-VUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YAw-7L-r3R" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2597" y="427"/>
+        </scene>
         <!--Todo List-->
         <scene sceneID="fkG-ks-gtL">
             <objects>
@@ -112,6 +164,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo List" id="atH-SR-FSH">
+                        <barButtonItem key="leftBarButtonItem" title="Daily Stats" id="lD7-4b-HgV">
+                            <connections>
+                                <segue destination="6KG-Sd-Y65" kind="showDetail" identifier="Stats" id="0RE-SL-mvt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UHc-T3-7ce">
                             <connections>
                                 <segue destination="XeN-LG-Jzq" kind="showDetail" id="mKb-Y8-FVM"/>
@@ -121,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCQ-Gi-idH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="1104"/>
+            <point key="canvasLocation" x="1126" y="753"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XAb-He-Fiv">
@@ -140,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejN-Vc-sSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="1104"/>
+            <point key="canvasLocation" x="364" y="753"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ks8-Ev-Cfa">
@@ -160,6 +217,25 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="1861" y="1104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B9e-N8-VTg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6KG-Sd-Y65" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWs-zF-Tal">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jhm-r4-WDu" kind="relationship" relationship="rootViewController" id="XLd-Xy-GaV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNY-Ws-0qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="427"/>
         </scene>
     </scenes>
 </document>

@@ -22,6 +22,17 @@ class ToDoListTableViewController: UITableViewController {
         
     }
     
+    func removeTaskMoreThan24Hour(){
+        for (var i = 0; i < tasks.count; i++) {
+            if (tasks[i].completed) {
+                let currentTime = NSDate()
+                if (currentTime.timeIntervalSinceDate(tasks[i].completeDate!) > 86400) {
+                    tasks.removeAtIndex(i)
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadInitialData()
@@ -34,6 +45,7 @@ class ToDoListTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        removeTaskMoreThan24Hour()
         return self.tasks.count
     }
     
@@ -54,11 +66,19 @@ class ToDoListTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var completeTask: Task = self.tasks[indexPath.row] as Task
         completeTask.completed = !completeTask.completed
+        completeTask.completeDate = NSDate()
         tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            tasks.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
 
     @IBAction func cancelAddNewTask(segue: UIStoryboardSegue){
-        
+        removeTaskMoreThan24Hour()
     }
     
     @IBAction func saveNewTask(segue: UIStoryboardSegue){
@@ -69,4 +89,23 @@ class ToDoListTableViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Stats" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let dest = nav.topViewController as! StatsViewController
+            dest.completed = totalCompleted()
+        }
+    }
+    
+    func totalCompleted() -> String {
+        var num = 0
+        for task in self.tasks {
+            if task.completed {
+                num+=1
+            }
+        }
+        return String(num)
+    }
+    
 }
