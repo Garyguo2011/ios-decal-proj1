@@ -62,6 +62,11 @@ class ToDoListTableViewController: UITableViewController {
     }
     
     @IBAction func saveNewTask(segue: UIStoryboardSegue){
-        
+        var source: ViewController = segue.sourceViewController as! ViewController
+        var task: Task = source.newTask!
+        if task.name != "" {
+            self.tasks.append(task)
+        }
+        self.tableView.reloadData()
     }
 }

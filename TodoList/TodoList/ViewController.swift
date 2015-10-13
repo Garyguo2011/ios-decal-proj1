@@ -24,6 +24,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender as? NSObject != self.doneButton{
+            return
+        }
+        if self.textField.text != ""{
+            self.newTask = Task(name: self.textField.text!)
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
