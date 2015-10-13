@@ -1,6 +1,6 @@
 //
-//  Todo_ListUITests.swift
-//  Todo ListUITests
+//  TodoListUITests.swift
+//  TodoListUITests
 //
 //  Created by Xinran Guo on 10/12/15.
 //  Copyright © 2015 Xinran Guo. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Todo_ListUITests: XCTestCase {
+class TodoListUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

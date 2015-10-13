@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Todo List.xcscheme</key>
+		<key>TodoList.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>856ADB181BCC04F800AC39C4</key>
+		<key>856ADB581BCC9A0C00AC39C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>856ADB2E1BCC04F800AC39C4</key>
+		<key>856ADB6C1BCC9A0C00AC39C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>856ADB391BCC04F800AC39C4</key>
+		<key>856ADB771BCC9A0C00AC39C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

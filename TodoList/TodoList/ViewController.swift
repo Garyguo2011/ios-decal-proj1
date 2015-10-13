@@ -1,6 +1,6 @@
 //
-//  FirstViewController.swift
-//  Todo List
+//  ViewController.swift
+//  TodoList
 //
 //  Created by Xinran Guo on 10/12/15.
 //  Copyright © 2015 Xinran Guo. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Todo List
+//  TodoList
 //
 //  Created by Xinran Guo on 10/12/15.
 //  Copyright © 2015 Xinran Guo. All rights reserved.
