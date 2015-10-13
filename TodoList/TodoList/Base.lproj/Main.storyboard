@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add New Task-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fig-6J-VK7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fig-6J-VK7">
                                 <rect key="frame" x="74" y="139" width="453" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -32,10 +32,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fig-6J-VK7" secondAttribute="trailing" constant="53" id="wQG-bo-bZl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add New Task" id="ubI-1v-3Fh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="50w-Fk-CSV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ewn-1k-5Ie"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="1104"/>
+            <point key="canvasLocation" x="2673" y="1104"/>
         </scene>
         <!--Todo List-->
         <scene sceneID="fkG-ks-gtL">
@@ -100,7 +104,7 @@
                     <navigationItem key="navigationItem" title="Todo List" id="atH-SR-FSH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UHc-T3-7ce">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="showDetail" id="mKb-Y8-FVM"/>
+                                <segue destination="XeN-LG-Jzq" kind="showDetail" id="mKb-Y8-FVM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,6 +131,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejN-Vc-sSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="1104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ks8-Ev-Cfa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XeN-LG-Jzq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vq6-ke-afZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pgu-hH-Zi2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5w-t8-cVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="1104"/>
         </scene>
     </scenes>
 </document>
