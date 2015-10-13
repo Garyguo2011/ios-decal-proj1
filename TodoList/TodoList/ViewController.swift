@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var newTask: Task?
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
